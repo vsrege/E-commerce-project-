@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="myAccount">
+<head>
+
+<meta name="viewport" content="width=device-width,intial-scale=1" charset="UTF-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/era81.css"> 
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+
+<title>Era81</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+ <!--  <div class="container-fluid"> -->
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div class="col-md-2 dropdown" id="ownerdrop">
+      <span id="username"></span> 
+      <button class="dropdown-toggle" data-toggle="dropdown" onclick="showDropdown()"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu" id="usermenu" style="display:none;">
+     <!--  <li ng-repeat="item in menulist"><a href="{{item.path}}">{{item.name}}</a> -->
+     <li><a href="#">My Account</a></li>
+      <li><a href="profile.html">My Profile & Settings</a></li>
+      <li><a href="#">My Orders</a></li>
+      <li><a href="#">My Voting History</a></li>
+      <li><a href="#">My Pricing History</a></li>
+      <li><a href="#">My Wishlist</a></li>
+      <li><a href="#">Log out</a></li> 
+      </ul> 
+      </div>
+      <div class="col-md-2"><a href="#">Cart</a></div>
+     
+   </div> 
+ 
+
+ </nav> 
+  <!-- </div> -->
+
+<div id="back" class="row" class="img-responsive">
+
+<div id="formcontainer" ng-controller="ConfirmCtrl">
+<div id="heading">
+ <h1 class="text-uppercase">thank you!</h1>
+<h3>Your Era81 account has been created.</h3>
+<h3>We've sent you a confirmation email, please follow the</h3>
+<h3>link in the email to activate your account.</h3>
+<br/>
+<h3>We wish you a great time on Era81!</h3>
+
+<button type="button" class="btn btn-md accbtn" ng-click="showProduct()">Explore Products</button><button type="button" class="btn btn-md accbtn" ng-click="manageAccount()">Manage Account</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- </div> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-route.js"></script>
+<script src="controllers/controller.js"></script>
+
+</body>
+
+
+<script>
+
+
+document.getElementById("username").innerHTML = sessionStorage.getItem("user");
+
+
+var slideShow=document.getElementById("back");
+document.getElementById("back").style.backgroundImage="url('images/slides/lion.jpg')";
+
+function showDropdown(){
+	
+	var state=document.getElementById('usermenu').style.display;
+	if(state=="block")
+		{
+		document.getElementById('usermenu').style.display="none";
+		}
+	else{
+		document.getElementById('usermenu').style.display="block";
+	}
+	
+}
+
+
+
+/* function validate(){
+	
+var regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+if (($("#email2").val() == '' || !regex.test($("#email2").val())))
+{
+    alert('Please enter a valid email address.');
+    return false;
+}
+
+}
+ */
+
+
+
+/* $(document).ready(function() {	
+
+
+
+
+var from,to,subject,text;
+$("#send").click(function(){ 
+	validate();
+    to=$("#email2").val();
+    subject="Thanks for signing up with Era81";
+    text="Hi User,\nWelcome to Era81.Vote for your customized product,decide its price and see it launch in your market.";
+    $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+    if(data=="sent")
+    {
+      */ /* $("#message").empty().html("
+
+Email is been sent at "+to+" . Please check inbox !
+
+");*/
+/*alert('Message sent');
+    }
+
+});
+});
+
+
+
+
+
+});
+ */
+
+
+    
+
+</script>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Era81 Store Account - Stats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+      
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div>
+   </div> 
+  </div>
+</nav>
+  
+<div class="container profileback">
+<div class="row">
+<form id="userinfo">
+    <div class="col-md-12">
+    
+    <ul class="nav navbar-nav" id="profilemenu">
+        <li><a href="#"  class="makeactive">Store Stats</a></li>
+        <li><a href="#" class="makeactive">Orders</a></li>
+        <li><a href="#" class="makeactive">Listing Manager</a></li>
+        <li><a href="#" class="makeactive">Finances</a></li>
+        <li><a href="#" class="makeactive">Store Settings</a></li>
+      </ul>
+      
+    </div>
+    
+   
+     </form>
+</div>
+ <div class="row orders">
+ <form>
+ <div id="orderselection" align="center">
+ <div class="col-md-6">
+ View orders of 
+ <span class="statselect">
+ <select>
+ <option value="0">month</option>
+ </select>
+ </span>
+ <span class="statselect">
+ <select>
+ <option value="0">year</option>
+ </select>
+ </span>
+ </div>
+
+ <div class="col-md-2">Search your orders:</div>
+ <span class="col-md-3 searchorder">
+ 
+     <input type="text"  placeholder="Enter order details" class="searchorderinput"/>
+      <a href="#">
+          <span class="glyphicon glyphicon-search"></span>
+       </a>
+ </span>
+ 
+ 
+</div>
+</form>
+</div>
+ <div class="container">
+  
+  <ul class="nav nav-tabs nav-justified" id="ordermenu">
+    <li class="storeactive"><a data-toggle="tab" href="#all">ALL</a></li>
+    <li><a data-toggle="tab" href="#open">OPEN</a></li>
+    <li><a data-toggle="tab" href="#completed">COMPLETED</a></li>
+    <li><a data-toggle="tab" href="#cancelled">CANCELLED</a></li>
+  </ul>
+ <div class="tab-content">
+    <div id="all" class="tab-pane fade in active orderstatsbg">
+      <table><!-- class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Placed</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+    <div id="open" class="tab-pane  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div>
+    <div id="completed" class="tab-pane fade  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+    <div id="cancelled" class="tab-pane fade  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  </div>
+</div>
+
+  </div>
+ 
+</body>
+<script>
+
+
+
+$(".makeactive").click(function () {
+	 
+	  $(this).parent().toggleClass('active');
+	 
+
+  });
+
+</script>
+</html>

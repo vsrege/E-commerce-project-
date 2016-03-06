@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Era81 Store Account - Stats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <a href="product.jsp"><img id="logo" src="images/logo.png" alt="era81 logo"/></a>
+      
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="#" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div class="col-md-2" id="username" align="right" style="margin-top:20px;"></div>
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+     <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <!-- <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li> -->
+      <li><a href="#">My Account</a></li>
+      <li><a href="profile.jsp">My Profile & Settings</a></li>
+      <li><a href="#">My Orders</a></li>
+      <!-- <li><a href="#">My Voting History</a></li>
+      <li><a href="#">My Pricing History</a></li> -->
+      <li><a href="#">My Wishlist</a></li>
+      <li><a href="#" id="logout">Log out</a></li>
+      </ul> 
+      </div>
+   </div> 
+  </div>
+</nav>
+  
+
+
+ <div class="container">
+ <a href="orderhistory.html"><img src="images/icons/leftarrow.png" style="height:20px;width:20px;"/>Go back to All Orders</a>
+ <h3 id="ordernum" align="center"></h3>
+ <div>
+   	<table id="orderlist"><!-- class="table table-bordered"> class="tab-pane fade in active orderstatsbg"-->
+    <thead style="background-color:#F5F5F5;color:#000000;">
+      <tr>
+        <th>#</th>
+        <th>Product</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Quantity</th>
+        <th>Price</th>
+       
+      </tr>
+    </thead>
+   
+  </table>
+  </div>
+  
+  
+</div>
+
+  
+ 
+</body>
+<script>
+document.getElementById("username").innerHTML=sessionStorage.getItem("firstname")+" "+sessionStorage.getItem("lastname");
+
+$("#logout").click(function(){ 
+	
+	sessionStorage.clear();
+	location.href="product.jsp";
+	
+	
+});
+
+function getParameterByName(name) 
+{
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var oid = getParameterByName('oid');
+
+
+$("#ordernum").html("Order #"+oid);
+
+$.ajax({
+    url : 'rest/placeOrder/fetchOrderDetails',
+    type: 'POST',
+    data : oid,
+    contentType: 'application/json; charset=utf-8',
+    dataType : 'json',
+    processData: true,
+    success: function(a,data)
+    {
+     
+      var menu,orderlist,subtotal=0,row='',i,inter=0;
+      
+      menu = eval('(' + JSON.stringify(a) + ')'); 
+      orderlist = menu.id.length;
+      var ship = 15;
+      var tax = 6.5;
+      
+     
+   	  
+   	
+       for(i=0;i<orderlist;i++)
+    	   {
+    	  	 var j=i+1;
+    	  	inter= parseFloat(menu.price[i])*parseInt(menu.quan[i]);
+	    	  row+=
+	    	 '<tr align=\"center\"><td>'+j+'</td><td><img src=\"'+menu.url[i]+'\" alt=\"img\" style=\"height:100px;width:100px;margin-left:0px;\"/> '+menu.pname[i]+'</td><td><div style=\"height:30px;width:30px;background-color:'+menu.color[i]+'\"></div></td>'+
+	    	 '<td>'+menu.size[i]+'</td><td>'+menu.quan[i]+'</td><td>$'+inter+'</td></tr>';
+	    	 
+	    	 subtotal+=parseFloat(inter);
+    	   };
+     var total = parseFloat(ship)+parseFloat(tax)+subtotal;
+   
+     row+='<tr align=\"right\"><td colspan="5">SUBTOTAL:</td><td>$'+subtotal+'</td></tr>';
+     row+='<tr align=\"right\"><td colspan="5">TAX:</td><td>$6.5</td></tr>';
+     row+='<tr align=\"right\"><td colspan="5">SHIPPING:</td><td>$15</td></tr>';
+     row+='<tr align=\"right\" style=\"color:#009999;border-color:#009999;\"><td colspan="5">TOTAL:</td><td>$'+total+'</td></tr>';
+       
+	 $('#orderlist').append(row);
+    	
+    },
+    error: function()
+    {
+    	alert("Products not available");
+    }
+});
+
+</script>
+</html>

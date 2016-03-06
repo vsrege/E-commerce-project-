@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,intial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/era81.css"> 
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<title>Era81</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+  <div class="row">
+    <div class="col-md-2">
+    <a href="product.jsp"><img id="logo" src="images/logo.png" alt="era81 logo"/></a>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><!-- <a href="#" class="text-uppercase">crowd selection</a> --></li>
+        <li><!-- <a href="#" class="text-uppercase">crowd pricing</a> --></li>
+        <li class="active"><a href="#" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div id="right">
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></div>
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Sign up</a></div>
+      </div> 
+     
+   </div> 
+ 
+
+ </nav> 
+<div class="container-fluid">
+
+<div class="row">
+<div class="col-md-12 thankyou">
+<div class="col-md-12">Thank you! Your order #<span id="ordernum"></span> has been successfully processed.</div>
+<div class="col-md-12">You can track it any time in <a href="orderhistory.html">your orders.</a></div>
+<div class="col-md-3"></div><div class="col-md-6" align="center"><img src="images/orderplaced.png" alt="order placed" class="img-responsive"/></div>
+<div class="col-md-3"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+<script>
+
+document.getElementById("ordernum").innerHTML=sessionStorage.getItem("orderid");
+</script>
+</html>
+

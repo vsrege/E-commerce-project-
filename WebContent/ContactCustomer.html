@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,intial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/era81.css"> 
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<title>Era81-Contact Us</title>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=666902543445721";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<nav class="navbar navbar-default">
+
+  <div class="row">
+    <div class="col-md-2">
+    <a href="product.jsp"><img id="logo" src="images/logo.png" alt="era81 logo"/></a>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <!-- <div id="right">
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></div>
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Sign up</a></div>
+      </div> -->
+      <div class="col-md-2 dropdown" id="ownerdrop">
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div>
+       <!-- <div class="col-md-2 dropdown" id="customerdrop">
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Profile & Settings</a></li>
+      <li><a href="#">My Orders</a></li>
+      <li><a href="#">My Voting History</a></li>
+      <li><a href="#">My Pricing History</a></li>
+      <li><a href="#">My Wishlist</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div> -->
+      
+      <a href="#"><img src="images/icons/cart.png" alt="cart" id="cart"/></a>
+     
+   </div> 
+ 
+</nav> 
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12"> 
+<div class="col-md-6">
+<div class="col-md-12 consocial">
+<p class="text-uppercase">Have a question?</p>
+<div>
+You may be able to find an answer to your question by<br/> consulting our list of <a href="#" style="color:#009999;">Frequently Asked Questions</a>.
+</div>
+<div>
+You can also contact us by filling the form below: 
+</div>
+
+</div>
+ <div class="well col-md-12" style="height:100%">
+ 
+ <form id="contactus">
+ <div class="conrow">
+ <div class="col-md-4">
+ <span>I'm</span>
+ </div>
+ 
+ <span class="col-md-8 customselect">
+ <select><option>Customer</option></select></span>
+
+ </div>
+ <div class="conrow">
+ <div class="col-md-4">
+ <span>Subject</span>
+ </div>
+ <div>
+ <span class="col-md-8 customselect"><select><option>Product Issues</option></select></span>
+ </div>
+ </div>
+ 
+ <div class="conrow">
+ <textarea id="contactmsg" placeholder="Type your question here" class="col-md-12" rows="4"></textarea>
+ </div>
+ <div class="conrow">
+ <div class="col-md-4">
+ <span>Name</span>
+ </div>
+ <div>
+ <input type="text" id="name" class="col-md-8"/>
+ </div>
+ </div>
+ <div class="conrow">
+ <div class="col-md-4">
+ <span>Email</span>
+ </div>
+ <div>
+ <input type="text" id="conemail" class="col-md-8"/>
+ </div>
+ </div>
+ <div class="conrow">
+ <div class="col-md-4">
+ <span>Confirm Email</span>
+ </div>
+ <div>
+ <input type="text" id="cemail" class="col-md-8"/>
+ </div>
+ </div>
+ <div class="conrow">
+ <span class="right">
+ <input type="submit" class="activebtn" value="SEND" id="submit"/>
+ </span>
+ </div>
+ </form>
+ </div>
+ </div>
+ <!-- </div> -->
+<div class="col-md-6">
+<div class="col-md-12 consocial">
+<p class="text-uppercase">follow us on social media</p>
+<p>
+<img src="images/icons/facebook.png" alt="facebook"/>
+<img src="images/icons/tumblr.png" alt="tumblr"/>
+<img src="images/icons/pinterest.png" alt="pinterest"/>
+<img src="images/icons/instagram.png" alt="instagram"/></p>
+<p>See what people say about us on social media</p>
+</div>
+<div class="col-md-6">
+<img class="col-md-12" src="images/icons/instagram.png" style="background-color:#BEBEBE;color:transparent;width:257px;"/>
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="4" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/xAVI56BH7W/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_top">Era81 wishes you Merry Christmas and may your dreams come true in 2015! 🎄🎁🎅 #Christmas #happynewyear #xmas #fashion</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by Era81 (@era81official) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2014-12-24T21:50:03+00:00">Dec 24, 2014 at 1:50pm PST</time></p></div></blockquote>
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Top 5 Kickass <a href="https://twitter.com/hashtag/Startups?src=hash">#Startups</a> Of Today <a href="http://t.co/7IE2pt8dk7">http://t.co/7IE2pt8dk7</a> <a href="https://twitter.com/startoutcon">@startoutcon</a> <a href="https://twitter.com/powerofhug">@PowerOfHug</a> <a href="https://twitter.com/Era81Official">@era81official</a> <a href="https://twitter.com/hispalando">@hispalando</a> <a href="https://twitter.com/hashtag/linkedIn?src=hash">#linkedIn</a> <a href="https://twitter.com/hashtag/smallbiz?src=hash">#smallbiz</a> <a href="https://twitter.com/hashtag/socbiz?src=hash">#socbiz</a> <a href="https://twitter.com/hashtag/pr?src=hash">#pr</a></p>&mdash; Ravi Kikan (@ravikikan) <a href="https://twitter.com/ravikikan/status/557429845756772353">January 20, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div class="col-md-6">
+<div class="fb-page" data-href="https://www.facebook.com/Era81Official?fref=ts" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/Era81Official?fref=ts"><a href="https://www.facebook.com/Era81Official?fref=ts">Era81</a></blockquote></div></div>
+
+
+ <img src="images/icons/instagram.png" style="background-color:#BEBEBE;color:transparent;width:257px;"/>
+</div>
+
+ 
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();  
+    
+   /*  $('[data-toggle=popover]').bind('shown.bs.popover', function () {
+    	  $('.popover').css('top',parseInt($('.popover').css('top')) + 5 + 'px') 
+    	})*/
+    	
+    	
+
+});
+
+
+$('#customer').on('click', function(e){
+
+   
+	removePassive('#customer');
+	addActive('#customer');
+
+    
+    
+});
+
+$('#designer').on('click', function(e){
+
+	removePassive('#designer');
+	addActive('#designer');
+});
+$('#brandowner').on('click', function(e){
+
+	removePassive('#brandowner');
+	addActive('#brandowner');
+});
+$('#other').on('click', function(e){
+
+	removePassive('#other');
+	addActive('#other');
+});
+
+
+function addPassive(id)
+{
+	$(id).addClass('passivebtn');
+	
+	}
+	
+	function removePassive(id)
+	{
+	
+		 $(id).removeClass('passivebtn');
+	}
+	function addActive(id)
+	{
+		$(id).addClass('activebtn');
+		
+		}
+	function removeActive(id)
+	{
+		
+		 $(id).removeClass('activebtn');
+	}
+	
+	
+	function custactive(){
+		var arr=new Array();
+		arr=['#designer','#brandowner','#other'];
+		for(var i=0;i<arr.length;i++)
+			{
+		if($(arr[i]).hasClass("activebtn")){
+			removeActive(arr[i]);
+			addPassive(arr[i]);
+		}
+			}
+	}
+function designeractive(){
+		
+	var arr=new Array();
+	arr=['#customer','#brandowner','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+	}
+function brandactive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+function otheractive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#brandowner'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+</script>
+</html>
+

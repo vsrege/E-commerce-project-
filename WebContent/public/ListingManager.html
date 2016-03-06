@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Era81 Store Account - Stats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/jquery.sortable.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+      
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div>
+   </div> 
+  </div>
+</nav>
+  
+<div class="container profileback">
+<div class="row">
+
+  <div class="col-md-12">
+  <ul class="nav nav-tabs nav-justified" id="profilemenu">
+    <li><a data-toggle="tab" href="#stats">Store Stats</a></li>
+    <li><a data-toggle="tab" href="#orders">Orders</a></li>
+    <li><a data-toggle="tab" href="#listingmgr">Listing Manager</a></li>
+    <li><a data-toggle="tab" href="#finances">Finances</a></li>
+    <li><a data-toggle="tab" href="#settings">Store Settings</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="stats" class="tab-pane">
+     
+  </div>
+
+<div id="orders" class="tab-pane">
+   <div class="row orders">
+ <form>
+ <div id="orderselection" align="center">
+ <div class="col-md-6">
+ View orders of 
+ <span class="statselect">
+ <select>
+ <option value="0">month</option>
+ </select>
+ </span>
+ <span class="statselect">
+ <select>
+ <option value="0">year</option>
+ </select>
+ </span>
+ </div>
+
+ <div class="col-md-2">Search your orders:</div>
+ <span class="col-md-3 searchorder">
+ 
+     <input type="text"  placeholder="Enter order details" class="searchorderinput"/>
+      <a href="#">
+          <span class="glyphicon glyphicon-search"></span>
+       </a>
+ </span>
+ 
+ 
+</div>
+</form>
+</div>
+<div class="container">
+  
+  <ul class="nav nav-tabs nav-justified" id="ordermenu">
+    <li class="storeactive"><a data-toggle="tab" href="#all">ALL</a></li>
+    <li><a data-toggle="tab" href="#open">OPEN</a></li>
+    <li><a data-toggle="tab" href="#completed">COMPLETED</a></li>
+    <li><a data-toggle="tab" href="#cancelled">CANCELLED</a></li>
+  </ul>
+ <div class="tab-content">
+    <div id="all" class="tab-pane fade in active orderstatsbg">
+      <table><!-- class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Placed</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+    <div id="open" class="tab-pane  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div>
+    <div id="completed" class="tab-pane fade  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+    <div id="cancelled" class="tab-pane fade  orderstatsbg">
+      <table><!--  class="table table-bordered"> -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Order#</th>
+        <th>Client</th>
+        <th>Order Value</th>
+        <th>Store Earnings<a href="#"><span class="glyphicon glyphicon-question-sign inverse" id="orderqmark"></span></a></th>
+        <th>Payment Status</th>
+        <th>Delivery Status</th>
+        <th>Order Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  </div>
+</div>   
+      
+      
+      
+</div>
+
+
+
+
+    <div id="listingmgr" class="tab-pane">
+    
+       <div class="row">
+ 
+ <div class="listingmenu col-md-2">
+ <form>
+ 
+ <p class="searchlist">
+ 
+     <input type="text"  placeholder="Search listings" class="searchlistinput"/>
+      <a href="#">
+          <span class="glyphicon glyphicon-search"></span>
+       </a>
+ </p>
+ </form><br/><br/><br/>
+ <ul class="nav nav-stacked">
+        <li class="listhead"><a href="#"  class="text-uppercase">Listing status</a>
+        </li>
+        <li><a href="#">In Crowd Selection</a>
+       <ul class="nav nav-stacked nestedul">
+        <li class="listactive">Draft</li>
+        <li>Active(by#date)</li>
+        <li>Expired</li>
+        </ul>
+        </li>
+        <li><a href="#">In Crowd Pricing</a>
+        <ul class="nav nav-stacked nestedul">
+        <li>Active(by#date)</li>
+        <li>Priced</li>
+        </ul>
+        </li>
+        <li><a href="#">In Shop</a>
+        <ul class="nav nav-stacked nestedul">
+        <li>Active</li>
+        <li>Sold Out</li>
+        </ul>
+        
+        </li>
+        <li class="listhead"><a href="#" class="text-uppercase">rearrange listings</a></li>
+        
+ </ul>
+</div>
+<div class="col-md-1 division"></div>
+<section>
+<ul class="listingmenu col-md-9 sortable grid">
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/><img src="images/icons/close.png" alt="stamp" class="closebtn"/><!-- <span class="center">#ProductName</span><span class="left">#ProductName</span><span class="right">$250</span> -->
+<div class="left">
+<img class="img-responsive heart" alt="up" src="images/icons/invheart.jpg"> 10 <img class="img-responsive heart" alt="up" src="images/icons/heart.jpg"/> 512
+</div>
+<div class="right">#10 out of 549</div>
+</li>
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod2.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/></li>
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/></li>
+
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/><img src="images/icons/close.png" alt="stamp" class="closebtn"/><span class="center">#ProductName</span><span class="left">#ProductName</span><span class="right">$250</span>
+<div class="left">
+<img class="img-responsive heart" alt="up" src="images/icons/invheart.jpg"> 10 <img class="img-responsive heart" alt="up" src="images/icons/heart.jpg"/> 512
+</div>
+<div class="right">#10 out of 549</div>
+</li>
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod2.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/></li>
+<li class="col-md-4"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/><img src="images/icons/edit.png" alt="stamp" class="edit"/></li>
+
+
+
+</ul> 
+</section>
+
+
+
+</div>
+  </div>
+<div id="finances" class="tab-pane">
+           <div class="row">
+ 
+ <div class="fin col-md-3">
+ 
+ <ul class="nav nav-stacked">
+        <li class="selectideas text-uppercase">billing information
+        </li>
+        <li>
+        <span id="billheader">Default payment account</span>
+        <div id="billinginfo">
+        <div class="lightgrey">visa **** **** **** 3451</div>
+        
+        Cardholder:
+        <div class="lightgrey">
+        Marissa Ross
+        </div>
+        Expiration date:
+        <div class="lightgrey">
+        08/2019
+        </div>
+        Billing address:
+        <div class="lightgrey">
+        494 Capistrano Ave,
+        San Francisco,CA 94112,US
+        </div>
+        <br/>
+        <div class="right">
+        <a href="#"><img src="images/icons/edit.png" alt="stamp" class="edit"/></a>
+        </div>
+        </div>
+        
+        </li>
+        <li></li>
+        <li class="filterbtn text-uppercase">
+        
+        Add new payment method
+       
+        </li>
+        </ul>
+
+</div>
+<div class="col-md-1 division">
+
+</div>
+<section>
+<div class="col-md-8">
+<div id="statements" class="tab-pane orderstatsbg">
+<div class="selectideas text-uppercase" align="center">monthly statements</div>
+      <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th># of New Listings</th>
+        <th>Fees</th>
+        <th>Status</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      
+    </tbody>
+  </table>
+    </div>
+</div>
+</section>
+
+
+
+</div>
+</div>
+<div id="settings" class="tab-pane">
+      <div class="row">
+ 
+ <div class="set col-md-3">
+ 
+ <p class="storebtn">Store Information</p>
+ <p class="storebtn">Store Story</p>
+ 
+
+</div>
+<div class="col-md-1 division">
+
+</div>
+<section>
+<div class="col-md-8">
+<div id="storeinfo" class="tab-pane orderstatsbg">
+
+
+<ul class="nav nav-stacked">
+        
+        <li class="selectideas">Shop Name:</li>
+        <li class="selectideas">Shop Image:</li>
+        <li class="selectideas">Links
+        <ul class="nav nav-stacked storesocial">
+        <li><img src="images/icons/fbicon.png" alt="fbicon"/> Connect with Facebook page</li>
+        <li><img src="images/icons/twittericon.png" alt="twittericon"/> Linked to <a href="#">#ShopNameTwitterPage</a>
+        <div class="right">
+        <a href="#"><img src="images/icons/edit.png" alt="stamp" class="edit"/></a>
+        </div>
+        </li>
+        
+        </ul>
+        
+        </li>
+</ul>
+      
+    </div>
+</div>
+</section>
+
+
+
+</div>
+      
+      
+      
+      
+      
+</div>
+  </div>
+</div>
+
+</div>
+
+<br/><br/>
+<!--  -->
+
+
+<!--  -->
+ </div>
+ 
+</body>
+
+<script>
+
+$(function() {
+	$('.sortable').sortable();
+	$('.handles').sortable({
+		handle: 'span'
+	});
+	$('.connected').sortable({
+		connectWith: '.connected'
+	});
+	$('.exclude').sortable({
+		items: ':not(.disabled)'
+	});
+});
+$(".makeactive").click(function () {
+	 
+	  $(this).parent().toggleClass('active');
+	 
+
+  });
+
+</script>
+</html>

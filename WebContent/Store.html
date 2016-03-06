@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+<!--  <link rel="stylesheet" href="css/storecheckbox.css">  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <a href="product.jsp"><img id="logo" src="images/logo.png" alt="era81 logo"/></a>
+      <!-- <a class="navbar-brand" href="#">Era81</a> -->
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="product.jsp" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div id="right"></div> 
+      <!-- <div class="col-md-1"><a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></div>
+      <div class="col-md-1"><a href="#" data-toggle="modal" data-target="#loginModal">Sign up</a></div> -->
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div>
+       <!-- <div class="col-md-2 dropdown" id="customerdrop">
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Profile & Settings</a></li>
+      <li><a href="#">My Orders</a></li>
+      <li><a href="#">My Voting History</a></li>
+      <li><a href="#">My Pricing History</a></li>
+      <li><a href="#">My Wishlist</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div> -->
+      
+      <a href="#">Cart</a>
+      </div> 
+     
+   </div> 
+ 
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4> 
+       </div>  
+        <div class="modal-body">
+       
+ <div class="row">
+ <form>
+ <div class="outerspace">
+ <div class="col-sm-12 well" id="storemodal">
+ <div class="col-sm-6">
+ <ul>
+ <li><input  type="checkbox" id="allapp" value="AA" class="greenstyle"/><label for="allapp" class="greenstyle">All Apparels</label></li>
+  <li><input type="checkbox" id="tops" value="T"/><label for="tops">Tops</label></li>
+   <li><input type="checkbox" id="tshirt" value="TS"/><label for="tshirt">T-shirts</label></li>
+    <li><input  type="checkbox" id="lsleeves" value="LS"/><label for="lsleeves">Long-sleeves</label></li>
+ </ul>
+ </div>
+ <div class="col-sm-6">
+ <ul>
+ <li><input  type="checkbox" id="allacc" value="AAC" class="greenstyle"/><label for="allacc" class="greenstyle">All Accessories</label></li>
+ <li><input type="checkbox" id="backpack" value="BP"/><label for="backpack">Backpacks</label></li>
+ <li><input  type="checkbox" id="belts" value="BL"/><label for="belts">Belts</label></li>
+  <li><input type="checkbox" id="clutch" value="C"/><label for="clutch">Clutches</label></li>
+  <li><input  type="checkbox" id="ipad" value="I"/><label for="ipad">iPad covers</label></li>
+ <li><input  type="checkbox" id="laptop" value="LB"/><label for="laptop">Laptop bags</label></li>
+  <li><input  type="checkbox" id="pouch" value="LP"/><label for="pouch">Leather pouches</label></li>
+  <li><input  type="checkbox" id="travelbags" value="TB"/><label for="travelbags">Travel bags</label></li>
+   <li><input  type="checkbox" id="wallet" value="W"/><label for="wallet">Wallets</label></li>
+    </ul>
+ </div>
+ 
+ 
+ </div>
+ <div class="col-sm-5 well rangencolor">
+ <h5 class="text-uppercase"><span class="range">Price Range</span></h5>
+      
+      <p><input type="range" name="price" min="1" max="1500" id="price"/></p>
+      <p><span id="rleft">$1</span>$<span id="currentValue">0</span><span id="rright">$1500</span></p>
+ 
+ </div>
+ <div class="col-sm-1">
+
+ 
+ </div>
+ <div class="col-sm-6 well rangencolor">
+ <h5 class="text-uppercase"><span id="prodcolor">color</span></h5>
+      
+      <ul class="palette">
+      <li>
+      <button type="button" class="btn btn-sm colorbtn" id="red"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="darkgray"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="yellow"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="parrotgreen"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="green"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="blue"></button> 
+      </li>
+      <li>
+      <button type="button" class="btn btn-sm colorbtn" id="purple"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="pink"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="white"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="lightgray"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="black"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="brown"></button> 
+      </li>
+      </ul>
+ </div>
+ 
+ <button type="button" class="btn btn-md filterbtn text-uppercase">filter</button>
+ </div>
+ </form>
+ 
+ </div>
+ 
+ 
+ 
+        </div>
+       
+      
+    </div>
+  </div>
+  </div>
+ 
+  
+  
+</nav>
+ <div class="row">
+    <div class="col-md-3 well" id="leftpanel">
+   <div class="col-md-2">
+   <img src="images/icons/citizen.gif" alt="brand" id="storepic"/>
+   </div>
+   <div class="col-md-1" id="brandinfo">#Brandname<br/>San Francisco, CA</div><br/><br/><br/><br/><br/><br/>
+      <div>Welcome to our brand new store! At #BrandName we are committed to create stylish functional high-end leather accessories and cotton apparels. Handmade from the best organic cotton and grained leather. </div>
+    <br/>
+    <a href="#">About</a><br/>
+    Sales(19,400)<br/>
+    Reviews(800)<br/><br/>
+    <div id="rating">
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    <span class="glyphicon glyphicon-star"></span>
+    </div>
+    </div>
+    <div class="col-md-5">
+    
+    <a href="#" data-toggle="modal" data-target="#loginModal"><button type="button" class="btn btn-md filterbtn text-uppercase">filter products</button></a>
+   
+    </div>
+ <div class="col-md-4">
+    <span  class="search" id="storesearch">
+     <input type="text"  placeholder="Search product in this shop..." class="searchinput"/>
+      <a href="#">
+          <span class="glyphicon glyphicon-search"></span>
+       </a> 
+     </span> 
+    </div> 
+    <div class="col-md-9 storegrid">
+    <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+     <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+      <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+    </div>
+    <div class="col-md-9 storegrid">
+    <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+     <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+      <div class="col-md-3"><img class="img-responsive" alt="prod1" src="images/products/prod1.png"/></div>
+    </div>
+    </div> 
+<div class="container">
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+   
+    </div> 
+  </div>
+
+</body>
+<script>
+$(function(){
+
+    var currentValue = $('#currentValue');
+
+    $('#price').change(function(){
+        currentValue.html(this.value);
+    });
+
+    // Trigger the event on load, so
+    // the value field is populated:
+
+    $('#price').change();
+
+});
+</script>
+</html>

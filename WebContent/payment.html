@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Era81 Store Account - Payment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    <a href="product.jsp"><img id="logo" src="images/logo.png" alt="era81 logo"/></a>
+      
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        
+        <li class="active"><a href="product.jsp" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div class="col-md-2" id="username" align="right" style="margin-top:20px;"></div>
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+     <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      
+      <li><a href="#">My Account</a></li>
+      <li><a href="profile.jsp">My Profile & Settings</a></li>
+      <li><a href="#">My Orders</a></li>
+      <li><a href="#">My Wishlist</a></li>
+      <li><a href="#" id="logout">Log out</a></li>
+      </ul> 
+      </div>
+   </div> 
+  </div>
+</nav>
+  
+<div class="container profileback">
+
+ <div class="container">
+ <fieldset>
+          <div id="legend">
+          <legend>Payment Options</legend>
+          </div>
+		<div class="radio">
+		  <label><input type="radio" name="optradio" id="paypal" value="pay"><img src="images/paypal.png" style="width:100px;height:35px"></label>
+		  <p></p>
+		  <!-- <label><input type="radio" name="optradio" id="credit" value="cr"><img src="images/otherPayment.jpg" style="width:350px;height:40px"></label>
+		   --><p></p>
+		</div>
+		</fieldset>
+</div>
+<div id="paypalinfo" style="display:none;">
+	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="paypalcart"> 
+	<input type="hidden" name="business" value="caregivers@gmail.com">
+	<input type="hidden" name="cmd" value="_xclick">
+	
+	<input type="hidden" name="currency_code" value="USD">
+	<!-- <input type="hidden" name="return" value="http://localhost:8080/Era81site/aftercheckout.html"> -->
+	<input type="hidden" name="return" value="http://192.241.238.164:8080/Era81site/aftercheckout.html">
+	<input type="hidden" name="rm" value="2">
+	<!-- <input type="hidden" name="cancel_return" value="http://localhost:8080/Era81site/product.jsp"> -->
+	<input type="hidden" name="cancel_return" value="http://192.241.238.164:8080/Era81site/product.jsp"> 
+	<input class="col-sm-offset-4 col-sm-4" type="image" name="submit" border="0" src="images/paypal.png" alt="PayPal - The safer, easier way to pay online" style="width:250px;height:40px">
+	<img alt="" border="0" width="1" height="1" src="https://www.paypal.com/en_US/i/scr/pixel.gif" > 
+	</form>
+</div>
+  </div>
+ 
+</body>
+<script>
+
+document.getElementById("username").innerHTML=sessionStorage.getItem("firstname")+" "+sessionStorage.getItem("lastname");
+
+$(".makeactive").click(function () {
+	 
+	  $(this).parent().toggleClass('active');
+	 
+
+  });
+  
+  
+$("#logout").click(function(){ 
+	
+	sessionStorage.clear();
+	location.href="product.jsp";
+	
+	
+});
+  
+if(sessionStorage.length>0)
+{
+
+	var cart = "";
+	var row = "";
+	
+	var cart = JSON.parse(sessionStorage.getItem("cart"));
+	
+	
+		row+='<input type=\"hidden\" name=\"item_name\" id=\"item_name\" value=\"'+cart.prodname+'\">';
+		
+	row+='<input type=\"hidden\" name=\"amount\" id=\"amount\" value=\"'+cart.subtotal+'\">';
+
+
+$("#paypalcart").append(row);
+}
+
+
+$("#paypal").click(function () {
+	
+	
+	$("#paypalinfo").show();
+	$("#creditinfo").hide();
+			
+    });
+ 
+ $("#credit").click(function () {
+		
+		
+		$("#paypalinfo").hide();
+		$("#creditinfo").show();		
+	    });
+
+
+</script>
+</html>

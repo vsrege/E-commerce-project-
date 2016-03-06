@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,intial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/era81.css"> 
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<title>Era81-Contact Us</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="#" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div id="right">
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></div>
+      <div class="col-md-2"><a href="#" data-toggle="modal" data-target="#loginModal">Sign up</a></div>
+      </div> 
+     
+   </div> 
+ 
+
+ </nav> 
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-md-3 contacttype">
+<ul class="nobullets">
+<!-- <li>
+<div class="text-center example-class1" data-container="body" data-template='<div class="popover1" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>' data-toggle="popover" data-placement="left" data-content="this is a test">Test 1</div>
+
+
+</li> -->
+<li>
+<div class="btn btn-md passivebtn" onclick="custactive();" id="customer" data-container="body" data-html="true" data-template='' data-toggle="popover" data-placement="left" data-content="<div class='col-md-12'>You may be able to find an answer by consulting our list of <a href='#' class='modallink'>Frequently Asked Questions</a><br/><br/>
+You can also contact us by filling a form below<form id='custform' class='col-md-12'><div class='col-md-6'>Subject* </div><div class='col-md-6'><select><option value='0'>Product Issue</option></select></div><div class='col-md-12'><textarea id='message' placeholder='Type your message' rows='4' cols='30'></textarea></div><div class='col-md-6'>First name* </div><div class='col-md-6'><input type='text' id='firstname'/></div>
+<div class='col-md-6'>Last name*</div><div class='col-md-6'> <input type='text' id='lname'/></div><div class='col-md-6'>Email* </div><div class='col-md-6'><input type='text' id='emailcust'/></div><div class='col-md-6'>Confirm Email* </div><div class='col-md-6'><input type='text' id='confirm'/></div><div class='col-md-12' align='right'><input type='submit' id='sendcust' class='btn btn-md activebtn' value='Send'/></div></form></div>">User</div>
+</li>
+<!-- <li>
+<a href="#"  data-toggle="popover" data-trigger="focus" data-html="true" data-placement="left" data-content="<div class='inpop'>You may be able to find an answer by consulting our list of <a href='#' class='modallink'>Frequently Asked Questions</a><br/><br/>
+You can also contact us by filling a form below<br/><form id='custform'>Subject* <select><option value='0'>Product Issue</option></select><br/><textarea id='message' placeholder='Type your message' rows='4' cols='30'></textarea><br/>First name* <input type='text' id='firstname'/>
+Last name* <input type='text' id='lname'/>Email* <input type='text' id='emailcust'/><br/>Confirm Email* <input type='text' id='confirm'/> </form></div>">
+<button type="button" class="btn btn-md activebtn" id="customer">You are a Customer</button>
+</a>
+</li> 
+<div class="btn btn-md passivebtn" onclick="designeractive();" id="designer" data-container="body" data-html="true" data-template='<div class="popover1" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>' data-toggle="popover" data-placement="left" data-content="<div class='col-md-12'>You may be able to find an answer by consulting our list of <a href='#' class='modallink'>Frequently Asked Questions</a><br/><br/>
+You can also contact us by filling a form below<form id='designform' class='col-md-12'><div class='col-md-6'>Subject* </div><div class='col-md-6'><select><option value='0'>Product Issue</option></select></div><div class='col-md-12'><textarea id='dmessage' placeholder='Type your message' rows='4' cols='30'></textarea></div><div class='col-md-6'>First name* </div><div class='col-md-6'><input type='text' id='dfirstname'/></div>
+<div class='col-md-6'>Last name*</div><div class='col-md-6'> <input type='text' id='dlname'/></div><div class='col-md-6'>Email* </div><div class='col-md-6'><input type='text' id='emaildes'/></div><div class='col-md-6'>Confirm Email* </div><div class='col-md-6'><input type='text' id='dconfirm'/></div><div class='col-md-12' align='right'><input type='submit' id='dsend' class='btn btn-md activebtn' value='Send'/></div></form></div>">Customer</div>
+-->
+<li>
+<div class="btn btn-md passivebtn" onclick="designeractive();" id="designer" data-container="body" data-html="true" data-template='' data-toggle="popover" data-placement="left" data-content="<div class='col-md-12'>You may be able to find an answer by consulting our list of <a href='#' class='modallink'>Frequently Asked Questions</a><br/><br/>
+You can also contact us by filling a form below<form id='designform' class='col-md-12'><div class='col-md-6'>Subject* </div><div class='col-md-6'><select><option value='0'>Product Issue</option></select></div><div class='col-md-12'><textarea id='dmessage' placeholder='Type your message' rows='4' cols='30'></textarea></div><div class='col-md-6'>First name* </div><div class='col-md-6'><input type='text' id='dfirstname'/></div>
+<div class='col-md-6'>Last name*</div><div class='col-md-6'> <input type='text' id='dlname'/></div><div class='col-md-6'>Email* </div><div class='col-md-6'><input type='text' id='emaildes'/></div><div class='col-md-6'>Confirm Email* </div><div class='col-md-6'><input type='text' id='dconfirm'/></div><div class='col-md-12' align='right'><input type='submit' id='dsend' class='btn btn-md activebtn' value='Send'/></div></form></div>">Customer</div>
+
+
+</li>
+<li>
+<div class="btn btn-md passivebtn" onclick="brandactive();" id="brandowner" data-container="body" data-html="true" data-template='' data-toggle="popover" data-placement="left" data-content="<div class='col-md-12'><div class='col-md-12 modallink' align='center'><h4>Already have a brand?</h4></div>
+<div class='col-md-12'>We will be glad to sell your products on our platform. Please fill form below and we will contact you soon.</div><form id='brandform' class='col-md-12'><div class='col-md-6'>First name* </div><div class='col-md-6'><input type='text' id='bfirstname'/></div>
+<div class='col-md-6'>Last name*</div><div class='col-md-6'> <input type='text' id='blname'/></div><div class='col-md-6'>Email</div><div class='col-md-6'><input type='text' id='emailbrand'/></div><div class='col-md-6'>Confirm Email</div><div class='col-md-6'><input type='text' id='bconfirm'/></div><div class='col-md-6'>Phone*</div><div class='col-md-6'><input type='text' id='bphone'/></div><div class='col-md-6'>Category*</div><div class='col-md-6'><select><option value='0'>Clothing</option></select></div><div class='col-md-6'>Business name*</div><div class='col-md-6'><input type='text' id='bname'/></div>
+<div class='col-md-6'>Website</div><div class='col-md-6'><input type='text' id='website'/></div><div class='col-md-12' align='right'><input type='submit' id='bsend' class='btn btn-md activebtn' value='Send'/></div></form></div>">Designer</div>
+
+</li>
+<li>
+<div class="btn btn-md passivebtn" onclick="otheractive();" id="other" data-container="body" data-html="true" data-template='' data-toggle="popover" data-placement="left" data-content="<div class='col-md-12'>You may be able to find an answer by consulting our list of <a href='#' class='modallink'>Frequently Asked Questions</a><br/><br/>
+You can also contact us by filling a form below<form id='otherform' class='col-md-12'><div class='col-md-6'>Subject* </div><div class='col-md-6'><select><option value='0'>Product Issue</option></select></div><div class='col-md-12'><textarea id='omessage' placeholder='Type your message' rows='4' cols='30'></textarea></div><div class='col-md-6'>First name* </div><div class='col-md-6'><input type='text' id='ofirstname'/></div>
+<div class='col-md-6'>Last name*</div><div class='col-md-6'> <input type='text' id='olname'/></div><div class='col-md-6'>Email* </div><div class='col-md-6'><input type='text' id='emailother'/></div><div class='col-md-6'>Confirm Email* </div><div class='col-md-6'><input type='text' id='oconfirm'/></div><div class='col-md-12' align='right'><input type='submit' id='osend' class='btn btn-md activebtn' value='Send'/></div></form></div>">Manufacturer</div>
+</li>
+</ul>
+</div>
+<div class="row vdivide">
+<div class="col-md-3">
+<ul class="nobullets">
+<li><a href="#ship">Where does Era81 ship?</a></li>
+<li><a href="#cselect">How does Crowd Selection work?</a></li>
+<li><a href="#">How does Crowd Pricing work?</a></li>
+<li><a href="#">Benefits of Early Bird Access</a></li>
+<li><a href="#">Why Limited Time & Edition?</a></li>
+</ul>
+</div>
+<div class="col-md-5" id="ship">
+Democracy! Its all about voting. Here is how it works:<br/><br/>
+Designers from across the world pitch their ideas on Era81. Era81 lists those ideas for public voting. Users have access to all specifications of the product.After looking at the details users can either Vote For the product or can Vote Against the product. All those products/ideas that qualify in the round of Crowd Selection will go to Crowd Pricing. 
+</div>
+<div class="col-md-5" id="cselect">
+Democracy!</div>
+</div>
+<!-- <div class="col-md-12"> -->
+<ul class="col-md-12 nav navbar-nav" id="menu">
+        <li><a href="#">How Era81 works</a></li>
+        <li><a href="#" class="text-uppercase">faq</a></li>
+        <li><a href="#">Legal Side</a></li>
+        <li><a href="#">Seller's Guide</a></li>
+        <li><a href="ContactCustomer.html">Contact Us</a></li>
+        <li>
+          <span class="social">
+          <a href="#"><img src="images/icons/facebook.png"/></a>
+          <a href="#"><img src="images/icons/twitter.png"/></a>
+          <a href="#"><img src="images/icons/tumblr.png"/></a>
+          <a href="#"><img src="images/icons/googleplus.png"/></a>
+          </span>
+       </li>
+          
+</ul>
+<!-- </div> -->
+</div>
+</div>
+
+</body>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();  
+    
+   /*  $('[data-toggle=popover]').bind('shown.bs.popover', function () {
+    	  $('.popover').css('top',parseInt($('.popover').css('top')) + 5 + 'px') 
+    	})*/
+    	
+    	
+
+});
+
+
+$('#customer').on('click', function(e){
+
+   
+	removePassive('#customer');
+	addActive('#customer');
+
+    
+    
+});
+
+$('#designer').on('click', function(e){
+
+	removePassive('#designer');
+	addActive('#designer');
+});
+$('#brandowner').on('click', function(e){
+
+	removePassive('#brandowner');
+	addActive('#brandowner');
+});
+$('#other').on('click', function(e){
+
+	removePassive('#other');
+	addActive('#other');
+});
+
+
+function addPassive(id)
+{
+	$(id).addClass('passivebtn');
+	
+	}
+	
+	function removePassive(id)
+	{
+	
+		 $(id).removeClass('passivebtn');
+	}
+	function addActive(id)
+	{
+		$(id).addClass('activebtn');
+		
+		}
+	function removeActive(id)
+	{
+		
+		 $(id).removeClass('activebtn');
+	}
+	
+	
+	function custactive(){
+		var arr=new Array();
+		arr=['#designer','#brandowner','#other'];
+		for(var i=0;i<arr.length;i++)
+			{
+		if($(arr[i]).hasClass("activebtn")){
+			removeActive(arr[i]);
+			addPassive(arr[i]);
+		}
+			}
+	}
+function designeractive(){
+		
+	var arr=new Array();
+	arr=['#customer','#brandowner','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+	}
+function brandactive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+function otheractive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#brandowner'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+</script>
+</html>
+

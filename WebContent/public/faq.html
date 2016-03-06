@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,intial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/era81.css"> 
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<title>Era81-FAQ</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+     
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+     </div>
+      <div class="col-md-2 dropdown" id="ownerdrop"><!-- style="display:none;" -->
+      #nickname <button class="dropdown-toggle" data-toggle="dropdown"><img src="images/arrow.png" alt="menu dropdown"/></button>
+      <ul class="dropdown-menu">
+      <li><a href="#">My Account</a></li>
+      <li><a href="#">My Store Account</a></li>
+      <li><a href="#">View My Store</a></li>
+      <li><a href="#">Store Stats</a></li>
+      <li><a href="#">Listing Manager</a></li>
+      <li><a href="#">Finances</a></li>
+      <li><a href="#">Store Settings</a></li>
+      <li><a href="#">Log out</a></li>
+      </ul> 
+      </div>
+     
+   </div> 
+ 
+
+ </nav> 
+<div class="container-fluid">
+
+<div class="row"><div class="col-md-7"></div>
+<div class="col-md-12 contacttype">
+<ul class="nobullets">
+
+<li>
+<div class="btn btn-md passivebtn" onclick="custactive();" id="customer">User</div>
+</li>
+<li>
+<div class="btn btn-md passivebtn" onclick="designeractive();" id="designer">Customer</div>
+</li>
+<li>
+<div class="btn btn-md passivebtn" onclick="brandactive();" id="brandowner">Designer</div>
+</li>
+<li>
+<div class="btn btn-md passivebtn" onclick="otheractive();" id="other">Manufacturer</div>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();  
+    
+   /*  $('[data-toggle=popover]').bind('shown.bs.popover', function () {
+    	  $('.popover').css('top',parseInt($('.popover').css('top')) + 5 + 'px') 
+    	})*/
+    	
+    	
+
+});
+
+
+$('#customer').on('click', function(e){
+
+   
+	removePassive('#customer');
+	addActive('#customer');
+
+    
+    
+});
+
+$('#designer').on('click', function(e){
+
+	removePassive('#designer');
+	addActive('#designer');
+});
+$('#brandowner').on('click', function(e){
+
+	removePassive('#brandowner');
+	addActive('#brandowner');
+});
+$('#other').on('click', function(e){
+
+	removePassive('#other');
+	addActive('#other');
+});
+
+
+function addPassive(id)
+{
+	$(id).addClass('passivebtn');
+	
+	}
+	
+	function removePassive(id)
+	{
+	
+		 $(id).removeClass('passivebtn');
+	}
+	function addActive(id)
+	{
+		$(id).addClass('activebtn');
+		
+		}
+	function removeActive(id)
+	{
+		
+		 $(id).removeClass('activebtn');
+	}
+	
+	
+	function custactive(){
+		var arr=new Array();
+		arr=['#designer','#brandowner','#other'];
+		for(var i=0;i<arr.length;i++)
+			{
+		if($(arr[i]).hasClass("activebtn")){
+			removeActive(arr[i]);
+			addPassive(arr[i]);
+		}
+			}
+	}
+function designeractive(){
+		
+	var arr=new Array();
+	arr=['#customer','#brandowner','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+	}
+function brandactive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#other'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+function otheractive(){
+	
+	var arr=new Array();
+	arr=['#customer','#designer','#brandowner'];
+	for(var i=0;i<arr.length;i++)
+		{
+	if($(arr[i]).hasClass("activebtn")){
+		removeActive(arr[i]);
+		addPassive(arr[i]);
+	}
+		}
+}
+</script>
+</html>
+

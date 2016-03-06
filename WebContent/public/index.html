@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+<title>Product Catalog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkbox.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+  
+</head>
+<body>
+
+<script>
+//This is called with the results from from FB.getLoginStatus().
+function statusChangeCallback(response) {
+  console.log('statusChangeCallback');
+  console.log(response);
+  // The response object is returned with a status field that lets the
+  // app know the current login status of the person.
+  // Full docs on the response object can be found in the documentation
+  // for FB.getLoginStatus().
+  if (response.status === 'connected') {
+    // Logged into your app and Facebook.
+    testAPI();
+  } else if (response.status === 'not_authorized') {
+    // The person is logged into Facebook, but not your app.
+    document.getElementById('status').innerHTML = 'Please log ' +
+      'into this app.';
+  } else {
+    // The person is not logged into Facebook, so we're not sure if
+    // they are logged into this app or not.
+    document.getElementById('status').innerHTML = 'Please log ' +
+      'into Facebook.';
+  }
+}
+
+// This function is called when someone finishes with the Login
+// Button.  See the onlogin handler attached to it in the sample
+// code below.
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+window.fbAsyncInit = function() {
+	FB.init({
+	      appId      : '666897203446255',
+	      cookie     : true,  
+	      xfbml      : true,
+	      version    : 'v2.3'
+	    });
+	    
+// Now that we've initialized the JavaScript SDK, we call 
+// FB.getLoginStatus().  This function gets the state of the
+// person visiting this page and can return one of three states to
+// the callback you provide.  They can be:
+//
+// 1. Logged into your app ('connected')
+// 2. Logged into Facebook, but not your app ('not_authorized')
+// 3. Not logged into Facebook and can't tell if they are logged into
+//    your app or not.
+//
+// These three cases are handled in the callback function.
+
+FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});
+
+};
+
+// Load the SDK asynchronously
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+// Here we run a very simple test of the Graph API after login is
+// successful.  See statusChangeCallback() for when this call is made.
+function testAPI() {
+  console.log('Welcome!  Fetching your information.... ');
+  FB.api('/me', function(response) {
+    console.log('Successful login for: ' + response.name);
+    document.getElementById('status').innerHTML =
+      'Thanks for logging in, ' + response.name + '!';
+  });
+}
+
+
+
+  
+  
+
+  
+</script>
+<!-- <input ng-model="test">
+{{test}}  -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid" ng-controller="RegisterCtrl">
+  <div class="row">
+    <div class="col-md-2">
+    <img id="logo" src="images/logo.png" alt="era81 logo"/>
+      <!-- <a class="navbar-brand" href="#">Era81</a> -->
+    </div>
+    
+    <div class="col-md-6">
+      <ul class="nav navbar-nav navbar-center" id="menu">
+        <li><a href="#" class="text-uppercase">crowd selection</a></li>
+        <li><a href="#" class="text-uppercase">crowd pricing</a></li>
+        <li class="active"><a href="index.html" class="text-uppercase">shop</a></li>
+      </ul>
+      </div>
+      <div id="right">
+      <div class="col-md-1"><a href="#" data-toggle="modal" data-target="#loginModal">Log in</a></div>
+      <div class="col-md-1"><a href="#" data-toggle="modal" data-target="#loginModal">Sign up</a></div>
+      </div> 
+      
+   </div> 
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+       </div>  
+        <div class="modal-body">
+       <!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <div class="col-sm-12  modheader">
+          <h4 class="greentexthead">Welcome to Era81!</h4><br/>
+          <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">Log in with Facebook </fb:login-button>
+<p>We will never post anything without your permission.</p>
+<div id="status"></div>
+          <h4>or</h4>
+          </div>
+		  <div class="row vdivide">
+		    <div class="col-sm-6 text-center"><h4 class="greentext">Sign up (new user) </h4> 
+		    <form id="signup" class="contact" action="AccountConfirm.html">
+		    <input type="text" id="fname" ng-model="user.fname" placeholder="Enter first name"/>
+		    <input type="email" id="email" ng-model="user.email" placeholder="Enter e-mail address"/>
+		    <input type="email" id="remail" ng-model="user.remail" placeholder="Re-enter e-mail address"/>
+		    <input type="password" id="pass" ng-model="user.password" placeholder="Enter password"/>
+		    <input type="password" id="rpass" ng-model="user.rpassword" placeholder="Re-enter password"/>
+		    
+		    <input type="submit" id="signup" class="btn btn-md modalbt" value="Sign me up" ng-click="addContact()"/>
+		    <p>By signing up, you agree to our <br/><a class="modallink">terms of use</a> and <a class="modallink">privacy policy</a></p>
+		    </form>
+		    </div>
+		    <div class="col-sm-6 text-center"><h4 class="greentext">Log in (have an account) </h4> 
+		    <form id="login" class="logcontact">
+		    <input type="email" id="logemail" placeholder="Enter e-mail address"/>
+		    <input type="password" id="logpass" placeholder="Enter password"/>
+		    <p><a href="#">Forgot password?</a></p><br/>
+		    <input type="submit" class="btn btn-md modalbt" value="Log me in"/>
+		    <input type="checkbox" id="remember" class="checkbox" value="R"/><label for="remember" class="modallink">Remember me</label>
+		    </form>
+		    
+		    
+		    </div>
+		  </div>
+
+        </div>
+       
+      
+    </div>
+  </div>
+  </div>
+  </div>
+</nav>
+  
+<div class="container" ng-controller="CatalogCtrl">
+<div class="row">
+    <div class="col-md-2 well">
+    
+    <button type="button" class="btn btn-md activebtn">Apparels</button>
+    <ul class="appchild">
+    <li class="active"><a href="">Dress</a></li>
+    <li><a href="">Jackets</a></li>
+    <li><a href="">T-Shirts</a></li>
+    <li><a href="">Tops</a></li>
+    <li><a href="">Skirts</a></li>
+    <li><a href="">Cardigan</a></li>
+    </ul>
+    <button type="button" class="btn btn-md inactivebtn">Accessories</button>
+    <ul class="appchild">
+    <li class="active"><a href="">Backpacks</a></li>
+    <li><a href="">Belts</a></li>
+    <li><a href="">Clutches</a></li>
+    <li><a href="">iPad covers</a></li>
+    <li><a href="">Laptop bags</a></li>
+    <li><a href="">Leather pouches</a></li>
+    <li><a href="">Travel bags</a></li>
+    <li><a href="">Wallets</a></li>
+    </ul>
+   <br/>
+      <h5 class="text-uppercase"><span class="range">Price Range</span></h5>
+      
+      <p><input type="range" name="price" min="1" max="1500" id="price"/></p>
+      <p><span id="rleft">$1</span><span id="rmid">$<span id="currentValue">0</span></span><span id="rright">$1500</span></p>
+      <h5 class="text-uppercase"><span id="prodcolor">color</span></h5>
+      
+      <ul class="palette">
+      <li>
+      <button type="button" class="btn btn-sm colorbtn" id="red"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="darkgray"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="yellow"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="parrotgreen"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="green"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="blue"></button> 
+      </li>
+      <li>
+      <button type="button" class="btn btn-sm colorbtn" id="purple"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="pink"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="white"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="lightgray"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="black"></button>
+      <button type="button" class="btn btn-sm colorbtn" id="brown"></button> 
+      </li>
+      </ul>
+      
+    </div>
+   
+    <form id="choice" class="choice">
+    <div class="col-md-2"> 
+    <input type="checkbox" id="female" checked value="F" class="checkbox"/><label for="female">Female</label>
+    <input type="checkbox" id="male" value="M" class="checkbox"/><label for="male">Male</label>
+    </div>
+    <div class="col-md-3">
+    <label id="lb">Sort By:</label>
+    <span class="customselect">
+    <select id="sortlist">
+    <option value="0">--Select--</option>
+    <option value="BA">Brand(A to Z)</option>
+    <option value="BD">Brand(Z to A)</option>
+    <option value="RA">Rating(High to low)</option>
+    <option value="RD">Rating(Low to high)</option>
+    <option value="PA">Price(low to high)</option>
+    <option value="PD">Price(high to low)</option>
+    <option value="SA">Sales(High to low)</option>
+    <option value="SD">Sales(Low to high)</option>
+    </select>
+    </span> 
+    </div>
+    <!-- <div class="col-md-3"> -->
+    <span class="search col-md-2">
+     <input type="text"  placeholder="Search product..." class="searchinput"/>
+      <a href="#">
+          <span class="glyphicon glyphicon-search"></span>
+       </a>
+     </span>
+        <!-- </div> -->
+        <div class="col-md-3">
+       
+        <span class="grids">
+         <label id="lb">Display</label>
+        <a href="#" class="gridactive" id="grid1"><img src="images/grid3.png" alt="grid1"/></a>
+        <a href="#" id="grid2"><img src="images/grid1.png" alt="grid2" /></a>
+        <a href="#" id="grid3"><img src="images/grid2.png" alt="grid3" /></a>
+        </span>
+        </div>
+    <div class="col-md-10" ng-controller="ProductCtrl" id="gridcontainer"> 
+    <div class="products col-md-5" ng-repeat="product in productlist" id="gridblock">
+    <!-- <img class="img-responsive" alt="prod1" src="images/products/prod1.png"/> -->
+    <a href="ProductPage.html?id={{product._id}}"><img class="img-responsive" alt="product" ng-src="{{product.path}}" id="{{product._id}}"/></a>
+    {{product.name}} by {{product.designer}}<br/>
+    {{product.price}}
+    </div>
+     
+    
+    
+        <!-- <div class="products col-md-5">
+        <img class="img-responsive" alt="prod1" src="images/products/prod2.png"/></div> -->
+     </div>
+      </form>
+    </div>
+  </div>
+  
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+<script>
+$(document).ready(function() {
+	
+	$("#grid1").click(function(){
+			
+document.getElementById("gridblock").className = "products col-md-5";
+	});
+	
+	$("#grid2").click(function(){
+		document.getElementById("gridblock").className = "products col-md-3";
+			});
+	$("#grid3").click(function(){
+		document.getElementById("gridblock").className = "products col-md-1";
+			});
+});
+/*$(document).ready(function() {	
+	
+
+
+	function validate(){
+		
+		var regex = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+		if (($("#email").val() == '' || !regex.test($("#email").val())))
+		{
+		    alert('Please enter a valid email address.');
+		    return false;
+		}
+
+		}
+
+/* var from,to,subject,text;
+$("#signup").click(function(){ 
+	validate();
+    to=$("#email").val();
+    subject="Thanks for signing up with Era81";
+    text="Hi User,\nWelcome to Era81.Vote for your customized product,decide its price and see it launch in your market.";
+    $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+    if(data=="sent")
+    {*/
+       /*  $("#message").empty().html("
+
+Email is been sent at "+to+" . Please check inbox !
+
+"); */
+/*alert('Message sent');
+window.location="AccountConfirm.html";
+    }
+
+});
+}); 
+
+
+
+
+
+});*/
+
+
+$(function(){
+
+    var currentValue = $('#currentValue');
+
+    $('#price').change(function(){
+        currentValue.html(this.value);
+    });
+
+    // Trigger the event on load, so
+    // the value field is populated:
+
+    $('#price').change();
+
+});
+
+</script>
+</html>
